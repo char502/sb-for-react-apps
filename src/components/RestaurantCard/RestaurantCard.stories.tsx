@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { restaurants } from '../../stub/restaurants'
 
-import { RestaurantCard } from './progress/RestaurantCard.basic'
+import { RestaurantCard } from './RestaurantCard'
 
 export default {
   title: 'Components/RestaurantCard',

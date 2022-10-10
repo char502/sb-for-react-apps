@@ -4,6 +4,12 @@ import type { Restaurant } from '../types'
 
 import { api } from './index'
 
+// =========================================
+// When using the conditional logic pattern for
+// the api requests
+// import { api } from './conditional-logic'
+// =========================================
+
 export const useFetchRestaurants = () => {
   const [status, setStatus] = useState('idle')
   const [restaurants, setRestaurants] = useState<Restaurant[]>([])

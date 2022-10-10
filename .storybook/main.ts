@@ -1,4 +1,7 @@
 module.exports = {
+  // staticDirs - which folders storybook
+  // should host as assets
+  staticDirs: ['../public'],
   stories: [
     '../src/docs/Introduction.stories.mdx',
     '../src/docs/*.stories.mdx',
