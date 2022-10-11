@@ -1,4 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { within, userEvent } from '@storybook/testing-library'
+import { expect } from '@storybook/jest'
 
 import { restaurants } from '../../stub/restaurants'
 
@@ -21,6 +23,12 @@ export default {
 const Template: ComponentStory<typeof RestaurantCard> = (args) => <RestaurantCard {...args} />
 
 export const Default = Template.bind({})
+// canvasElement is the element that wraps the story
+Default.play = async ({ canvasElement, args }) => {
+  const canvas = within(canvasElement)
+  await userEvent.click(canvas.getByTestId('restaurant-card'))
+  await expect(args.onClick).toHaveBeenCalled()
+}
 
 export const New = Template.bind({})
 New.args = {
@@ -30,6 +38,11 @@ New.args = {
 export const Closed = Template.bind({})
 Closed.args = {
   isClosed: true,
+}
+Closed.play = async ({ canvasElement, args }) => {
+  const canvas = within(canvasElement)
+  await userEvent.click(canvas.getByTestId('restaurant-card'))
+  await expect(args.onClick).not.toHaveBeenCalled()
 }
 
 export const Loading = Template.bind({})
