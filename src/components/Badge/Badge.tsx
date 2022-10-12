@@ -4,7 +4,8 @@ import { Body } from '../typography'
 
 const Container = styled.div(
   ({ theme: { color, borderRadius } }) => css`
-    padding: 3px 8px;
+    /* padding: 3px 8px; */
+    padding: 4px 8px;
     background: ${color.badgeBackground};
     border-radius: ${borderRadius.xs};
     display: inline-block;
