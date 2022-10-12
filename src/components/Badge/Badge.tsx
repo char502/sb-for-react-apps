@@ -4,7 +4,8 @@ import { Body } from '../typography'
 
 const Container = styled.div(
   ({ theme: { color, borderRadius } }) => css`
-    padding: 3px 8px;
+    /* padding: 3px 8px; */
+    padding: 4px 8px;
     background: ${color.badgeBackground};
     border-radius: ${borderRadius.xs};
     display: inline-block;
@@ -24,7 +25,7 @@ type BadgeProps = {
 
 export const Badge = ({ text, className }: BadgeProps) => (
   <Container className={className}>
-    <Body type="span" size="S">
+    <Body type="span" size="XS">
       {text}
     </Body>
   </Container>
